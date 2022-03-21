@@ -1,65 +1,14 @@
 package Exception_handling_assigment.src;
-class PasswordCreation extends Exception{
 
-
-    int passwordConditionViolated = 0;
-
-    public PasswordCreation(int conditionViolated)
-    {
-        super("Invalid Password: ");
-        passwordConditionViolated = conditionViolated;
-    }
-
-    public String printMessage()
-    {
-        switch (passwordConditionViolated) {
-
-            // Password length should be
-            case 1:
-                return ("Password length should be"
-                        + " between 5 to 10 characters");
-
-            // Password should not contain any space
-            case 2:
-                return ("Password should not"
-                        + " contain any space");
-
-            // Password should contain// at least one digit(0-9)
-            case 3:
-                return ("Password should contain"
-                        + " at least one digit(0-9)");
-
-            // Password should contain at least
-            // one special character ( @, #, %, &, !, $ )
-            case 4:
-                return ("Password should contain at "
-                        + "least one special character");
-
-            // Password should contain at least
-            // one uppercase letter(A-Z)
-            case 5:
-                return ("Password should contain at"
-                        + " least one uppercase letter(A-Z)");
-
-            // Password should contain at least
-            // one lowercase letter(a-z)
-            case 6:
-                return ("Password should contain at"
-                        + " least one lowercase letter(a-z)");
-        }
-
-        return ("");
-    }
-}
 class password {
 
     public static void isValid(String password)
-            throws PasswordCreation
+            throws password
     {
 
         if (!((password.length() >= 5)
                 && (password.length() <= 10))) {
-            throw new PasswordCreation(1);
+            throw new password(1);
         }
 
         // to check space
